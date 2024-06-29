@@ -1,0 +1,22 @@
+import pyautogui
+import time
+
+def auto_clicker(interval, start_delay):
+    print(f"Starting in {start_delay} seconds...")
+    time.sleep(start_delay)
+    print("Auto clicker started. Press Ctrl+C to stop.")
+    
+    try:
+        while True:
+            pyautogui.click(button='left')  # Perform a left click
+            time.sleep(interval)
+    except KeyboardInterrupt:
+        print("Auto clicker stopped.")
+
+# Set the interval between clicks (in seconds)
+click_interval = 0.05  # 500 milliseconds
+# Set the delay before the auto clicker starts (in seconds)
+start_delay = 5
+
+# Uncomment the following line to run the auto clicker
+# auto_clicker(click_interval, start_delay)
